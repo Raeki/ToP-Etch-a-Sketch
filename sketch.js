@@ -2,6 +2,7 @@ class Sketch {
   constructor() {
     this.height = 16;
     this.width = 16;
+    this.mousedown = false;
   }
 
   makeSketch(container) {
@@ -28,7 +29,9 @@ class Sketch {
     box.id = `row-${row}-column-${column}`;
     box.className = "box";
     box.addEventListener("mouseover", () => {
-      box.style.background = "black";
+      if (this.mousedown) {
+        box.style.background = "black";
+      }
     });
     return box;
   }
