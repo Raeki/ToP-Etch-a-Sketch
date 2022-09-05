@@ -27,6 +27,9 @@ class Sketch {
     const box = document.createElement("div");
     box.id = `row-${row}-column-${column}`;
     box.className = "box";
+    box.addEventListener("mouseover", () => {
+      box.style.background = "black";
+    });
     return box;
   }
 }

@@ -13,6 +13,6 @@
   width: 10px;
 }
 
-.box, #sketch-container {
+#sketch-container {
   border: 1px solid black;
 }
