@@ -1,3 +1,18 @@
-* {
+#sketch-container, #container, .row {
+  width: max-content;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.box {
+  height: 10px;
+  width: 10px;
+}
+
+.box, #sketch-container {
   border: 1px solid black;
 }
