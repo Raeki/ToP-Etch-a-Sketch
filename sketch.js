@@ -1,7 +1,9 @@
 class Sketch {
   constructor() {
-    this.height = 16;
-    this.width = 16;
+    this.width = 100;
+    this.height = 100;
+    this.percentWidth = `${(1 / this.width) * 100}%`;
+    this.percentHeight = `${(1 / this.height) * 100}%`;
     this.mousedown = false;
   }
 
@@ -21,14 +23,20 @@ class Sketch {
       const box = this.makeBox(rowNum, i);
       row.append(box);
     }
+
     return row;
   }
 
   makeBox(row, column) {
     const box = document.createElement("div");
+
     box.id = `row-${row}-column-${column}`;
     box.className = "box";
+    box.style.width = "5px"; //this.percentWidth;
+    box.style.height = "5px"; //this.percentWidth;
+
     box.addEventListener("mouseover", () => {
+      console.log(`mouseover ${box.id}`);
       if (this.mousedown) {
         box.style.background = "black";
       }

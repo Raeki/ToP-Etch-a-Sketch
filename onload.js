@@ -8,8 +8,10 @@
 
     document.addEventListener("mousedown", () => {
       sketch.mousedown = true;
+      console.log("mousedown");
     });
     document.addEventListener("mouseup", () => {
+      console.log("mouseup");
       sketch.mousedown = false;
     });
   });
