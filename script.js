@@ -1,14 +1,17 @@
 (() => {
   window.addEventListener("load", () => {
-    const sketch = new Sketch();
     const sketchContainer = document.getElementById("sketch-container");
+    const sketch = new Sketch(sketchContainer);
+
     const slider = document.getElementById("slider");
     const sliderValue = document.getElementById("slider-value");
     sliderValue.innerText = slider.value;
     const sliderButton = document.getElementById("slider-button");
-    const resetButton = document.getElementById("reset-button");
 
-    sketch.makeSketch(sketchContainer);
+    const resetButton = document.getElementById("reset-button");
+    const rainbowButton = document.getElementById("rainbow-button");
+
+    sketch.makeSketch();
 
     // mouse logic
     document.addEventListener("mousedown", e => {
@@ -25,12 +28,21 @@
     sliderButton.addEventListener("click", () => {
       sketch.width = slider.value;
       sketch.height = slider.value;
-      sketchContainer.innerHTML = "";
-      sketch.makeSketch(sketchContainer);
+      sketch.reset();
     });
     resetButton.addEventListener("click", () => {
       sketchContainer.innerHTML = "";
-      sketch.makeSketch(sketchContainer);
+      sketch.reset();
+    });
+    rainbowButton.addEventListener("click", () => {
+      if (!sketch.rainbow) {
+        sketch.rainbow = true;
+        rainbowButton.innerText = "RAINBOW ON";
+      } else {
+        sketch.rainbow = false;
+        rainbowButton.innerText = "RAINBOW OFF";
+      }
+      sketch.reset();
     });
   });
 })();
