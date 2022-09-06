@@ -13,7 +13,6 @@
     // mouse logic
     document.addEventListener("mousedown", e => {
       sketch.mousedown = true;
-      e.preventDefault();
     });
     document.addEventListener("mouseup", () => {
       sketch.mousedown = false;
