@@ -8,8 +8,14 @@
   height: 400px;
 }
 
+#slider-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .row {
   display: flex;
   flex-direction: row;
   min-width: 100%;
 }
+
