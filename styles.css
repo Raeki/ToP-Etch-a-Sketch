@@ -3,15 +3,13 @@
 }
 
 #sketch-container {
-  max-width: max-content;
-  max-height: max-content;
   border: 1px solid black;
-
+  width: 400px;
+  height: 400px;
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  min-height: max-content;
-  max-width: max-content;
+  min-width: 100%;
 }

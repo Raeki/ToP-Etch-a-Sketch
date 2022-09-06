@@ -18,6 +18,7 @@ class Sketch {
     const row = document.createElement("div");
     row.id = `row-${rowNum}`;
     row.className = "row";
+    row.style.minHeight = this.percentHeight;
 
     for (let i = 1; i <= this.width; i++) {
       const box = this.makeBox(rowNum, i);
@@ -32,15 +33,18 @@ class Sketch {
 
     box.id = `row-${row}-column-${column}`;
     box.className = "box";
-    box.style.width = "5px"; //this.percentWidth;
-    box.style.height = "5px"; //this.percentWidth;
+    box.style.width = this.percentWidth;
 
     box.addEventListener("mouseover", () => {
       console.log(`mouseover ${box.id}`);
       if (this.mousedown) {
-        box.style.background = "black";
+        box.style.background = this.makeColor();
       }
     });
     return box;
+  }
+
+  makeColor() {
+    return "black";
   }
 }

@@ -2,9 +2,7 @@
   window.addEventListener("load", () => {
     const sketch = new Sketch();
 
-    const sketchContainer = document.getElementById("sketch-container");
-
-    sketch.makeSketch(sketchContainer);
+    sketch.makeSketch(document.getElementById("sketch-container"));
 
     document.addEventListener("mousedown", () => {
       sketch.mousedown = true;
